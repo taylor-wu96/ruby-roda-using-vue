@@ -15,6 +15,7 @@ $ bundle exec puma config.ru
 
 #### Routing for example
 ```
+
 $ locaclhost:9292 # => index.html
 $ locaclhost:9292/b # => complicate.example
 $ locaclhost:9292/c # => advanced.example
