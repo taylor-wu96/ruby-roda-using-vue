@@ -1,0 +1,11 @@
+/ #app
+/   h1 {{ product.name }}
+/   p {{ product.description }}
+/   p Price: ${{ product.price }}
+/   button @click="addToCart" Add to Cart
+script type="text/javascript" src="/assets/js/test-2.js"
+#app
+  h1 == "{{ product.name }}"
+  p == "{{ product.description }}" 
+  p == "Price: $ {{product.price}}" 
+  button @click="addToCart" Add to Cart
