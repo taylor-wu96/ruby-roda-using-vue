@@ -1,5 +1,6 @@
-script type="module" src="/assets/js/todomain.js"
+/ script type="module" src="/assets/js/todomain.js"
+script type="module" src="/assets/js/todoone.js"
+/ script type="module" src="/assets/js/todo/TodoList.vue"
 #app
-  todo-input
-  todo-list
-div
+  todo-input @add="addTodo"
+  todo-list :todos="todos"

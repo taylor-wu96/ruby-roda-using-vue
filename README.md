@@ -19,6 +19,7 @@ $ bundle exec puma config.ru
 $ locaclhost:9292 # => index.html
 $ locaclhost:9292/b # => complicate.example
 $ locaclhost:9292/c # => advanced.example
+$ locaclhost:9292/todo # => todo.example (in single file)
 
 ```
 
@@ -28,11 +29,12 @@ $ locaclhost:9292/c # => advanced.example
   1. slim file
   ```
   script type="text/javascript" src="/assets/js/filename.js"
+  script type="text/javascript" src="/assets/js/folder/filename.js" #should be included in app.rb folder/filename.js
   ```
   2. app.rb
   ```
     plugin :assets, 
-      js: ['a.js', 'b.js', 'c.js'], 
+      js: ['a.js', 'b.js', 'c.js','folder/d.js'], 
       path: 'public/assests/' 
   ```
   3. routing
@@ -46,8 +48,9 @@ $ locaclhost:9292/c # => advanced.example
 #### Code Structure
 
 ```
-sGemfile
+Gemfile
 Gemfile.lock
+README.md
 app.rb
 config.ru
 [public]
@@ -57,14 +60,22 @@ config.ru
             └── test.css
         └── [js]
             ├── test-2.js
-            └── test.js
+            ├── test-3.js
+            ├── test.js
+            ├── [todo]
+                ├── TodoInput.js
+                └── TodoList.js
+            ├── todomain.js
+            └── todoone.js
 [views]
+    ├── advanced.slim
     ├── complicate.slim
     ├── home.slim
     ├── jquery_test.slim
-    └── layout.slim
+    ├── layout.slim
+    └── todo.slim
 
 ```
 
 ### Known issues
-1. Todo example is not working properly.
+1. Todo example is not working properly. maybe can't use vue object for lack of complier

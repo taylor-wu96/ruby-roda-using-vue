@@ -5,7 +5,9 @@ require 'slim'
 class App < Roda
   # App code
   plugin :render, engine: 'slim', views: 'views'
-  plugin :assets, js: ['test.js', 'test-2.js', 'test-3.js', 'todomain.js'], path: 'public/assests/'
+  plugin :assets, js: ['test.js', 'test-2.js', 'test-3.js', 'todomain.js', 'todoone.js', 'todo/TodoInput.js', 'todo/TodoList.js'],
+                  # 'todo/TodoInput.vue', 'todo/TodoList.vue',
+                  path: 'public/assests/'
   # plugin :assets, css: 'test.css', path: 'public/assests'
 
   plugin :common_logger, $stderr
